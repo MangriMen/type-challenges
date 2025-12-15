@@ -20,7 +20,7 @@
 
 /* _____________ Your Code Here _____________ */
 
-type MyParameters<T extends Function> = T extends (...args: infer P) => unknown ? P : never
+type MyParameters<T extends (...args: never[]) => unknown> = T extends (...args: infer P) => unknown ? P : never
 
 /* _____________ Test Cases _____________ */
 import type { Equal, Expect } from '@type-challenges/utils'
